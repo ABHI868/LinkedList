@@ -1,5 +1,5 @@
 
-from TodoAPI.views import TodoView
+from .views import TodoView
 
 from django.conf.urls import url
 from django.urls import path

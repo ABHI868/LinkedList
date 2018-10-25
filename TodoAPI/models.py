@@ -5,3 +5,4 @@ from django.db import models
 class TodoElements(models.Model):
     todo_text=models.CharField(max_length=300)
     done=models.BooleanField()
+ 

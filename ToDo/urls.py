@@ -19,7 +19,11 @@ from django.views.generic import RedirectView
 from TodoAPI.views import TodoView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo/api/', TodoView.as_view()),
+   # path('todo/api/$', TodoView.as_view()),
+   # path('todo/api/(?P<pk>[0-9]+)$', TodoView.as_view()),
+    path('api/',include("TodoAPI.urls")),
+    # path('',RedirectView.as_view(url='/todo/api/',permanent=True))
+    path('',RedirectView.as_view(url="api/"))
 
-    path('',RedirectView.as_view(url='/todo/api/',permanent=True))
+
 ]

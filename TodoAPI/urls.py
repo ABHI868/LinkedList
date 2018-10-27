@@ -1,14 +1,14 @@
 
-from .views import TodoView
+from .views import TodoView,TodoDetailView
 
 from django.conf.urls import url
 from django.urls import path
 
-url_patterns=[
+urlpatterns=[
 
-    path('api/',TodoView.as_view()),
-
-
+    # path('api/$',TodoView.as_view()),
+    path('',TodoView.as_view()),
+    url(r'^(?P<pk>[0-9]+)/$',TodoDetailView.as_view())
 
 
 ]
